@@ -24,7 +24,6 @@ class SettingsViewController: UIViewController {
         setupHierarchy()
         setupView()
         setupTableView()
-        setupLayout()
     }
     
     // MARK: - Settings
@@ -40,18 +39,14 @@ class SettingsViewController: UIViewController {
                            forCellReuseIdentifier: TableViewCellWithDetailLabel.identifier)
         tableView.register(TableViewCellWithButton.self,
                            forCellReuseIdentifier: TableViewCellWithButton.identifier)
+        tableView.register(TableViewCellCustom.self,
+                           forCellReuseIdentifier: TableViewCellCustom.identifier)
     }
     
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    private func setupLayout() {
-        
-    }
-
-
 }
 
     
