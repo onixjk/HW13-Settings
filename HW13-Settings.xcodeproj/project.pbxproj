@@ -10,6 +10,8 @@
 		0252C88F286339BB00BCC7D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C88E286339BB00BCC7D1 /* AppDelegate.swift */; };
 		0252C893286339BB00BCC7D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C892286339BB00BCC7D1 /* SettingsViewController.swift */; };
 		0252C898286339BB00BCC7D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0252C897286339BB00BCC7D1 /* Assets.xcassets */; };
+		0252C8A82864A04800BCC7D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8A72864A04800BCC7D1 /* Extensions.swift */; };
+		0252C8AA2864A7F100BCC7D1 /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8A92864A7F100BCC7D1 /* Metric.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +20,8 @@
 		0252C892286339BB00BCC7D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0252C897286339BB00BCC7D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0252C89C286339BB00BCC7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0252C8A72864A04800BCC7D1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0252C8A92864A7F100BCC7D1 /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		0252C8A2286343CD00BCC7D1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0252C8A72864A04800BCC7D1 /* Extensions.swift */,
+				0252C8A92864A7F100BCC7D1 /* Metric.swift */,
 				0252C8A52863440D00BCC7D1 /* ViewController */,
 				0252C8A42863440700BCC7D1 /* Model */,
 			);
@@ -168,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0252C893286339BB00BCC7D1 /* SettingsViewController.swift in Sources */,
+				0252C8A82864A04800BCC7D1 /* Extensions.swift in Sources */,
 				0252C88F286339BB00BCC7D1 /* AppDelegate.swift in Sources */,
+				0252C8AA2864A7F100BCC7D1 /* Metric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +306,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8BWS2228WG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW13-Settings/Info.plist";
+				INFOPLIST_FILE = "HW13-Settings/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -325,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8BWS2228WG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW13-Settings/Info.plist";
+				INFOPLIST_FILE = "HW13-Settings/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
