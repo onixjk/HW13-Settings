@@ -18,7 +18,14 @@ extension SettingsViewController: UITableViewDataSource {
                 ) as? TableViewCellWithSwitcher else {
                     return UITableViewCell()
                 }
-                cell.textLabel?.text = "\(indexPath.row)"
+                return cell
+            case 1, 2:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: TableViewCellWithDetailLabel.identifier,
+                    for: indexPath
+                ) as? TableViewCellWithDetailLabel else {
+                    return UITableViewCell()
+                }
                 return cell
             default:
                 return UITableViewCell()
