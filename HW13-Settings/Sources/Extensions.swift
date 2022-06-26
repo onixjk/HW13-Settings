@@ -6,13 +6,23 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
-        return cell
+        switch indexPath.row {
+            case 0, 4:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: TableViewCellWithSwitcher.identifier,
+                    for: indexPath
+                ) as? TableViewCellWithSwitcher else {
+                    return UITableViewCell()
+                }
+                cell.textLabel?.text = "\(indexPath.row)"
+                return cell
+            default:
+                return UITableViewCell()
+        }
     }
 }
 

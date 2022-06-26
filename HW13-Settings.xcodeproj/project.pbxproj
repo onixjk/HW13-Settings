@@ -12,6 +12,7 @@
 		0252C898286339BB00BCC7D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0252C897286339BB00BCC7D1 /* Assets.xcassets */; };
 		0252C8A82864A04800BCC7D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8A72864A04800BCC7D1 /* Extensions.swift */; };
 		0252C8AA2864A7F100BCC7D1 /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8A92864A7F100BCC7D1 /* Metric.swift */; };
+		0252C8AE286835A200BCC7D1 /* TableViewCellWithSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0252C89C286339BB00BCC7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0252C8A72864A04800BCC7D1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0252C8A92864A7F100BCC7D1 /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
+		0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithSwitcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				0252C8A72864A04800BCC7D1 /* Extensions.swift */,
 				0252C8A92864A7F100BCC7D1 /* Metric.swift */,
+				02ADA0DE286879E2000B235B /* Cells */,
 				0252C8A52863440D00BCC7D1 /* ViewController */,
 				0252C8A42863440700BCC7D1 /* Model */,
 			);
@@ -102,6 +105,14 @@
 				0252C88E286339BB00BCC7D1 /* AppDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		02ADA0DE286879E2000B235B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			files = (
 				0252C893286339BB00BCC7D1 /* SettingsViewController.swift in Sources */,
 				0252C8A82864A04800BCC7D1 /* Extensions.swift in Sources */,
+				0252C8AE286835A200BCC7D1 /* TableViewCellWithSwitcher.swift in Sources */,
 				0252C88F286339BB00BCC7D1 /* AppDelegate.swift in Sources */,
 				0252C8AA2864A7F100BCC7D1 /* Metric.swift in Sources */,
 			);
