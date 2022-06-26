@@ -38,6 +38,8 @@ class SettingsViewController: UIViewController {
                            forCellReuseIdentifier: TableViewCellWithSwitcher.identifier)
         tableView.register(TableViewCellWithDetailLabel.self,
                            forCellReuseIdentifier: TableViewCellWithDetailLabel.identifier)
+        tableView.register(TableViewCellWithButton.self,
+                           forCellReuseIdentifier: TableViewCellWithButton.identifier)
     }
     
     private func setupTableView() {

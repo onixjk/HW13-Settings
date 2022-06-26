@@ -27,6 +27,14 @@ extension SettingsViewController: UITableViewDataSource {
                     return UITableViewCell()
                 }
                 return cell
+            case 3:
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: TableViewCellWithButton.identifier,
+                    for: indexPath
+                ) as? TableViewCellWithButton else {
+                    return UITableViewCell()
+                }
+                return cell
             default:
                 return UITableViewCell()
         }

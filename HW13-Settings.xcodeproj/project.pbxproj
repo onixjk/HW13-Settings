@@ -14,6 +14,7 @@
 		0252C8AA2864A7F100BCC7D1 /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8A92864A7F100BCC7D1 /* Metric.swift */; };
 		0252C8AE286835A200BCC7D1 /* TableViewCellWithSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */; };
 		02ADA0E228688787000B235B /* TableViewCellWithDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADA0E128688787000B235B /* TableViewCellWithDetailLabel.swift */; };
+		02ADA0E428688B90000B235B /* TableViewCellWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADA0E328688B90000B235B /* TableViewCellWithButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0252C8A92864A7F100BCC7D1 /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
 		0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithSwitcher.swift; sourceTree = "<group>"; };
 		02ADA0E128688787000B235B /* TableViewCellWithDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithDetailLabel.swift; sourceTree = "<group>"; };
+		02ADA0E328688B90000B235B /* TableViewCellWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */,
 				02ADA0E128688787000B235B /* TableViewCellWithDetailLabel.swift */,
+				02ADA0E328688B90000B235B /* TableViewCellWithButton.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				0252C893286339BB00BCC7D1 /* SettingsViewController.swift in Sources */,
 				02ADA0E228688787000B235B /* TableViewCellWithDetailLabel.swift in Sources */,
+				02ADA0E428688B90000B235B /* TableViewCellWithButton.swift in Sources */,
 				0252C8A82864A04800BCC7D1 /* Extensions.swift in Sources */,
 				0252C8AE286835A200BCC7D1 /* TableViewCellWithSwitcher.swift in Sources */,
 				0252C88F286339BB00BCC7D1 /* AppDelegate.swift in Sources */,
