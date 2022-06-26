@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TableViewCellWithSwitcher: UITableViewCell {
-    static let identifier = "TableViewCellWithSwitcher"
+class TableViewCellWithDetailLabel: UITableViewCell {
+    static let identifier = "TableViewCellWithDetailLabel"
     
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView()
@@ -22,14 +22,15 @@ class TableViewCellWithSwitcher: UITableViewCell {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "Switch"
+        label.text = "Label"
         return label
     }()
     
-    private lazy var switcher: UISwitch = {
-        let switcher = UISwitch()
-        switcher.addTarget(self, action: #selector(switchAction), for: .valueChanged)
-        return switcher
+    private lazy var detailLabel: UILabel = {
+        let detailLabel = UILabel()
+        detailLabel.text = "DetailLabel"
+        detailLabel.textColor = .secondaryLabel
+        return detailLabel
     }()
     
     // MARK: - Inits
@@ -37,9 +38,10 @@ class TableViewCellWithSwitcher: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.accessoryType = .disclosureIndicator
         self.contentView.addSubview(iconView)
         self.contentView.addSubview(label)
-        self.contentView.addSubview(switcher)
+        self.contentView.addSubview(detailLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -65,20 +67,10 @@ class TableViewCellWithSwitcher: UITableViewCell {
             label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor,constant: Metric.labelLeftOffset)
         ])
         
-        switcher.translatesAutoresizingMaskIntoConstraints = false
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            switcher.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            switcher.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+            detailLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            detailLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
         ])
-    }
-    
-    // MARK: - Actions
-    
-    @objc func switchAction() {
-        if switcher.isOn {
-            print("Turn On")
-        } else {
-            print("Turn Off")
-        }
     }
 }

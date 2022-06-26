@@ -34,7 +34,10 @@ class SettingsViewController: UIViewController {
     
     private func setupView() {
         self.title = Strings.navigationControllerTitle
-        tableView.register(TableViewCellWithSwitcher.self, forCellReuseIdentifier: TableViewCellWithSwitcher.identifier)
+        tableView.register(TableViewCellWithSwitcher.self,
+                           forCellReuseIdentifier: TableViewCellWithSwitcher.identifier)
+        tableView.register(TableViewCellWithDetailLabel.self,
+                           forCellReuseIdentifier: TableViewCellWithDetailLabel.identifier)
     }
     
     private func setupTableView() {
