@@ -7,8 +7,8 @@
 
 import UIKit
 
-class TableViewCellWithButton: UITableViewCell {
-    static let identifier = "TableViewCellWithButton"
+class TableViewCellCustom: UITableViewCell {
+    static let identifier = "TableViewCellCustom"
     
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView()
@@ -22,19 +22,8 @@ class TableViewCellWithButton: UITableViewCell {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "Label"
+        label.text = "Custom"
         return label
-    }()
-    
-    private lazy var button: UIButton = {
-        var config = UIButton.Configuration.filled()
-        config.baseBackgroundColor = .systemRed
-        config.buttonSize = .mini
-        
-        let button = UIButton()
-        button.configuration = config
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        return button
     }()
     
     // MARK: - Inits
@@ -45,7 +34,6 @@ class TableViewCellWithButton: UITableViewCell {
         self.accessoryType = .disclosureIndicator
         self.contentView.addSubview(iconView)
         self.contentView.addSubview(label)
-        self.contentView.addSubview(button)
     }
     
     required init?(coder: NSCoder) {
@@ -70,18 +58,6 @@ class TableViewCellWithButton: UITableViewCell {
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor,constant: Metric.labelLeftOffset)
         ])
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            button.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
-        ])
-    }
-    
-    // MARK: - Actions
-    
-    @objc func buttonAction() {
-        print("Доступно обновлений - \(button.titleLabel?.text ?? "").")
     }
 }
 

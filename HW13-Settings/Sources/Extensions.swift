@@ -6,7 +6,7 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,7 +36,13 @@ extension SettingsViewController: UITableViewDataSource {
                 }
                 return cell
             default:
-                return UITableViewCell()
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: TableViewCellCustom.identifier,
+                    for: indexPath
+                ) as? TableViewCellCustom else {
+                    return UITableViewCell()
+                }
+                return cell
         }
     }
 }
