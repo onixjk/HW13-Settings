@@ -10,13 +10,20 @@ import UIKit
 class TableViewCellWithSwitcher: UITableViewCell {
     static let identifier = "TableViewCellWithSwitcher"
     
+    private lazy var container: UIImageView = {
+        let container = UIImageView()
+        container.layer.cornerRadius = Metric.cellIconViewCornerRadius
+        container.clipsToBounds = true
+        return container
+    }()
+    
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView()
         iconView.contentMode = .scaleAspectFit
         iconView.tintColor = .white
         iconView.layer.cornerRadius = Metric.cellIconViewCornerRadius
         iconView.clipsToBounds = true
-        
+        iconView.layer.masksToBounds = true
         return iconView
     }()
     
@@ -37,9 +44,11 @@ class TableViewCellWithSwitcher: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.addSubview(iconView)
-        self.contentView.addSubview(label)
-        self.contentView.addSubview(switcher)
+        accessoryView = switcher
+        contentView.addSubview(container)
+        container.addSubview(iconView)
+        contentView.addSubview(label)
+        contentView.addSubview(switcher)
     }
     
     required init?(coder: NSCoder) {
@@ -51,10 +60,18 @@ class TableViewCellWithSwitcher: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        container.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            container.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            container.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            container.heightAnchor.constraint(equalToConstant: Metric.containerViewSize),
+            container.widthAnchor.constraint(equalToConstant: Metric.containerViewSize)
+        ])
+        
         iconView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iconView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            iconView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            iconView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            iconView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
             iconView.heightAnchor.constraint(equalToConstant: Metric.iconeViewSize),
             iconView.widthAnchor.constraint(equalToConstant: Metric.iconeViewSize)
         ])
@@ -64,12 +81,12 @@ class TableViewCellWithSwitcher: UITableViewCell {
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             label.leadingAnchor.constraint(equalTo: iconView.trailingAnchor,constant: Metric.labelLeftOffset)
         ])
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
         
-        switcher.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            switcher.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            switcher.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
-        ])
+        accessoryView = .none
     }
     
     // MARK: - Actions
@@ -80,5 +97,18 @@ class TableViewCellWithSwitcher: UITableViewCell {
         } else {
             print("Turn Off")
         }
+    }
+    
+    // MARK: - Configure cell
+    
+    func configure(with model: Cell) {
+        if model.isCustomCell  {
+            iconView.image = UIImage(named: model.imageName)
+        } else {
+            iconView.image = UIImage(systemName: model.imageName)
+        }
+        
+        container.backgroundColor = model.containerBackgroundColor
+        label.text = model.title
     }
 }
