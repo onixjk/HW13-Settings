@@ -10,6 +10,13 @@ import UIKit
 class TableViewCellWithButton: UITableViewCell {
     static let identifier = "TableViewCellWithButton"
     
+    private lazy var container: UIImageView = {
+        let container = UIImageView()
+        container.layer.cornerRadius = Metric.cellIconViewCornerRadius
+        container.clipsToBounds = true
+        return container
+    }()
+    
     private lazy var iconView: UIImageView = {
         let iconView = UIImageView()
         iconView.contentMode = .scaleAspectFit
@@ -29,7 +36,7 @@ class TableViewCellWithButton: UITableViewCell {
     private lazy var button: UIButton = {
         var config = UIButton.Configuration.filled()
         config.baseBackgroundColor = .systemRed
-        config.buttonSize = .mini
+        config.buttonSize = .small
         
         let button = UIButton()
         button.configuration = config
@@ -42,10 +49,11 @@ class TableViewCellWithButton: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.accessoryType = .disclosureIndicator
-        self.contentView.addSubview(iconView)
-        self.contentView.addSubview(label)
-        self.contentView.addSubview(button)
+        accessoryType = .disclosureIndicator
+        contentView.addSubview(container)
+        container.addSubview(iconView)
+        contentView.addSubview(label)
+        contentView.addSubview(button)
     }
     
     required init?(coder: NSCoder) {
@@ -57,10 +65,18 @@ class TableViewCellWithButton: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        container.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            container.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            container.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            container.heightAnchor.constraint(equalToConstant: Metric.containerViewSize),
+            container.widthAnchor.constraint(equalToConstant: Metric.containerViewSize)
+        ])
+        
         iconView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            iconView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            iconView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
+            iconView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            iconView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
             iconView.heightAnchor.constraint(equalToConstant: Metric.iconeViewSize),
             iconView.widthAnchor.constraint(equalToConstant: Metric.iconeViewSize)
         ])
@@ -82,6 +98,20 @@ class TableViewCellWithButton: UITableViewCell {
     
     @objc func buttonAction() {
         print("Доступно обновлений - \(button.titleLabel?.text ?? "").")
+    }
+    
+    // MARK: - Configure cell
+    
+    func configure(with model: Cell) {
+        if model.isCustomCell  {
+            iconView.image = UIImage(named: model.imageName)
+        } else {
+            iconView.image = UIImage(systemName: model.imageName)
+        }
+        
+        container.backgroundColor = model.containerBackgroundColor
+        label.text = model.title
+        button.setTitle(model.buttonTitle, for: .normal)
     }
 }
 
