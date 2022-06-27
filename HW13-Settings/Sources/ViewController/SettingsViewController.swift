@@ -8,6 +8,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    let model = Cell.getData()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: view.bounds, style: .grouped)
@@ -49,4 +50,4 @@ class SettingsViewController: UIViewController {
     }
 }
 
-    
+

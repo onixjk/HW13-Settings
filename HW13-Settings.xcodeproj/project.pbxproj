@@ -15,6 +15,8 @@
 		0252C8AE286835A200BCC7D1 /* TableViewCellWithSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */; };
 		02ADA0E228688787000B235B /* TableViewCellWithDetailLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADA0E128688787000B235B /* TableViewCellWithDetailLabel.swift */; };
 		02ADA0E428688B90000B235B /* TableViewCellWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADA0E328688B90000B235B /* TableViewCellWithButton.swift */; };
+		02ADA0E6286896BD000B235B /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADA0E5286896BD000B235B /* Cell.swift */; };
+		02ADA0EA2868C68E000B235B /* TableViewCellCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ADA0E92868C68E000B235B /* TableViewCellCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithSwitcher.swift; sourceTree = "<group>"; };
 		02ADA0E128688787000B235B /* TableViewCellWithDetailLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithDetailLabel.swift; sourceTree = "<group>"; };
 		02ADA0E328688B90000B235B /* TableViewCellWithButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellWithButton.swift; sourceTree = "<group>"; };
+		02ADA0E5286896BD000B235B /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		02ADA0E92868C68E000B235B /* TableViewCellCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				0252C8A72864A04800BCC7D1 /* Extensions.swift */,
-				0252C8A92864A7F100BCC7D1 /* Metric.swift */,
 				02ADA0DE286879E2000B235B /* Cells */,
 				0252C8A52863440D00BCC7D1 /* ViewController */,
 				0252C8A42863440700BCC7D1 /* Model */,
@@ -91,6 +94,8 @@
 		0252C8A42863440700BCC7D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0252C8A92864A7F100BCC7D1 /* Metric.swift */,
+				02ADA0E5286896BD000B235B /* Cell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				0252C8AD286835A200BCC7D1 /* TableViewCellWithSwitcher.swift */,
 				02ADA0E128688787000B235B /* TableViewCellWithDetailLabel.swift */,
 				02ADA0E328688B90000B235B /* TableViewCellWithButton.swift */,
+				02ADA0E92868C68E000B235B /* TableViewCellCustom.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				02ADA0E428688B90000B235B /* TableViewCellWithButton.swift in Sources */,
 				0252C8A82864A04800BCC7D1 /* Extensions.swift in Sources */,
 				0252C8AE286835A200BCC7D1 /* TableViewCellWithSwitcher.swift in Sources */,
+				02ADA0EA2868C68E000B235B /* TableViewCellCustom.swift in Sources */,
+				02ADA0E6286896BD000B235B /* Cell.swift in Sources */,
 				0252C88F286339BB00BCC7D1 /* AppDelegate.swift in Sources */,
 				0252C8AA2864A7F100BCC7D1 /* Metric.swift in Sources */,
 			);
