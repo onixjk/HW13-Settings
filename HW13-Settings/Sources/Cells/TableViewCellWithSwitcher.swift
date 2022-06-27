@@ -86,7 +86,7 @@ class TableViewCellWithSwitcher: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        accessoryView = .none
+        accessoryType = .disclosureIndicator
     }
     
     // MARK: - Actions
